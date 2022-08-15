@@ -1,0 +1,46 @@
+@use 'vars';
+
+.NotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 10px;
+}
+
+.NotFound img {
+    width: 300px;
+}
+
+.NotFound h3 {
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+.NotFound p {
+    text-align: center;
+    font-size: var(--sm);
+    color: var(--very-light-pink);
+}
+
+.back-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 40px;
+    width: 70%;
+}
+
+@media (min-width: 768px) {
+    .back-button {
+        width: 20%;
+    }
+
+    .NotFound img {
+        width: 400px;
+    }
+}
