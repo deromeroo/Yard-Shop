@@ -6,6 +6,9 @@ nav {
 	align-items: center;
 	padding: 0 24px;
 	border-bottom: 1px solid var(--very-light-pink);
+	position: sticky;
+	background-color: white;
+	top: 0;
 }
 .menu {
 	display: none;
@@ -45,7 +48,7 @@ nav {
 .navbar-user{
 	color: var(--black);
 	font-size: 24px;
-	margin-right: 10px;
+	margin-right: 15px;
 	margin-bottom: 4px;
 }
 

@@ -17,17 +17,22 @@ const useInitialState = () => {
         });
     };
 
-    const removeFromCart = (indexValue) => {
+    const removeFromCart = (payload) => { 
         setState({
-            ...state,
-            cart: state.cart.filter( ( _, index) => index !== indexValue)
+          ...state,
+          cart: state.cart.filter( ( product, index ) => {
+            if ( index == payload || product.id == payload ) {
+              return false;
+            }
+            return true;
+          }),
         });
-    };
+      };
 
     return {
         state,
         addToCart,
-        removeFromCart
+        removeFromCart,
     };
 };
 

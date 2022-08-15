@@ -9,7 +9,7 @@
 	padding: 20px 20px 0 20px;
 	position: absolute;
 	top: 60px;
-	right: 50px;
+	right: 25px;
 }
 .Menu ul {
 	list-style: none;
@@ -24,7 +24,7 @@
 	font-weight: bold;
 }
 .Menu ul li:last-child {
-	padding-top: 20px;
+	padding-top: 15px;
 	border-top: 1px solid var(--very-light-pink);
 }
 .Menu ul li:last-child a {
@@ -34,6 +34,21 @@
 .Menu ul li a {
 	color: var(--back);
 	text-decoration: none;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 	display: inline-block;
 }
+
+.navbar-email-mobile{
+	display: none;
+}
+
+@media (max-width: 720px ) {
+
+	.navbar-email-mobile {
+		font-size: 10px;
+		display: inline-block;
+		color: var(--very-light-pink);
+		margin: 0;
+		overflow-x: auto;
+	}
+ }

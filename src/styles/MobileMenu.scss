@@ -1,0 +1,40 @@
+@use 'vars';
+
+.MenuMobile {
+    position: absolute;
+    padding: 24px;
+    background-color: white;
+    width: 150px;
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+    left: 0;
+    top: 0;
+    z-index: 3;
+}
+
+.menu-mobile--header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-mobile--title{
+    margin: 0;
+    color: var(--black);
+}
+
+.MenuMobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.MenuMobile ul li {
+    margin-top: 30px;
+}
+
+.MenuMobile ul li a {
+    text-decoration: none;
+    color: var(--very-light-pink);
+}

@@ -12,6 +12,7 @@ const Menu = () => {
 					<a href="/">My account</a>
 				</li>
 				<li>
+					<p className="navbar-email-mobile">example@example.com</p>
 					<a href="/">Sign out</a>
 				</li>
 			</ul>
