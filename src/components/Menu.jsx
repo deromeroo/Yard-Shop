@@ -1,19 +1,41 @@
 import React from 'react';
 import '@styles/Menu.scss';
+import { useNavigate } from 'react-router-dom';
 
-const Menu = () => {
+const Menu = ({setToggle}) => {
+
+	const navigate = useNavigate();
+
 	return (
 		<div className="Menu">
 			<ul>
 				<li>
-					<a href="/" className="title">My orders</a>
+					<p 
+						className="title"
+						onClick={() => (
+							setToggle(false),
+							navigate('/orders')
+						)}
+					>
+						My orders
+					</p>
 				</li>
 				<li>
-					<a href="/">My account</a>
+					<p 
+						onClick={() => (
+							setToggle(false),
+							navigate('/account')
+						)}
+					>My account</p>
 				</li>
 				<li>
 					<p className="navbar-email-mobile">example@example.com</p>
-					<a href="/">Sign out</a>
+					<a
+						onClick={() => (
+							setToggle(false),
+							navigate('/login')
+						)}
+					>Sign out</a>
 				</li>
 			</ul>
 		</div>

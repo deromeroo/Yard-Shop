@@ -8,6 +8,7 @@ import logo from '@logos/yard-sale.svg';
 import cartLogo from '@icons/icon_shopping_cart.svg' 
 import '@styles/Header.scss';
 import { MenuMobile } from './MenuMobile';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
@@ -15,30 +16,32 @@ const Header = () => {
 	const [toggleOrders, setToggleOrders] = useState(false);
 	const [toggleMobile, setToggleMobile] = useState(false);
 	const { state: {cart} } = useContext(AppContext);	
+
+	const navigate = useNavigate()
 	
 	return (
 		<nav>
 			<img src={menu} alt="menu" className="menu"  onClick={ () => setToggleMobile(!toggleMobile) }/>
 			<div className="navbar-left">
-				<img src={logo} alt="logo" className="logo-header" />
+				<img src={logo} alt="logo" className="logo-header" onClick={ () => navigate('/')}/>
 				<ul>
 					<li>
-						<a href="/">All</a>
+						<a href="#">All</a>
 					</li>
 					<li>
-						<a href="/">Clothes</a>
+						<a href="#">Clothes</a>
 					</li>
 					<li>
-						<a href="/">Electronics</a>
+						<a href="#">Electronics</a>
 					</li>
 					<li>
-						<a href="/">Furnitures</a>
+						<a href="#">Furnitures</a>
 					</li>
 					<li>
-						<a href="/">Toys</a>
+						<a href="#">Toys</a>
 					</li>
 					<li>
-						<a href="/">Others</a>
+						<a href="#">Others</a>
 					</li>
 				</ul>
 			</div>
@@ -67,7 +70,7 @@ const Header = () => {
 				</ul>
 			</div>
 
-			{toggle && <Menu />}
+			{toggle && <Menu setToggle={setToggle} />}
 			{toggleOrders && <MyOrder setToggleOrders={setToggleOrders} />}
 			{toggleMobile && <MenuMobile toggleMobile={toggleMobile} setToggleMobile={setToggleMobile} /> }
 

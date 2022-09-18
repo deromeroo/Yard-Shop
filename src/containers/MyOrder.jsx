@@ -3,16 +3,13 @@ import OrderItem from '@components/OrderItem';
 import AppContext from '@context/AppContext';
 import '@styles/MyOrder.scss';
 import flechita from '@icons/flechita.svg';
+import { useNavigate } from 'react-router-dom';
 
 const MyOrder = ({setToggleOrders}) => {
 
-	const {state: {cart}} = useContext(AppContext);
+	const {state: {cart}, total} = useContext(AppContext);
 
-	const total = () => {
-		const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
-		const sum = cart.reduce(reducer, 0);
-		return sum;
-	}
+	const navigate = useNavigate();
 
 	return (
 		<aside className="MyOrder">
@@ -34,7 +31,11 @@ const MyOrder = ({setToggleOrders}) => {
 					</p>
 					<p>${total()}</p>
 				</div>
-				<button className="primary-button">
+				<button
+					type='button' 
+					className="primary-button"
+					onClick={() => (navigate('/checkout') , setToggleOrders(false) )}
+				>
 					Checkout
 				</button>
 			</div>

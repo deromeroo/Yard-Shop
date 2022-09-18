@@ -1,11 +1,15 @@
 import { useState } from "react";
 
 const initialState = {
-    cart: []
+    cart: [],
+    orders: [],
+    user: {}
 };
 
 const useInitialState = () => {
     const [state, setState] = useState(initialState);
+
+    //Cart
 
     const addToCart = (payload) => {
         setState({
@@ -29,10 +33,42 @@ const useInitialState = () => {
         });
       };
 
+    const total = () => {
+      const reducer = (accumulator, currentValue) => accumulator + currentValue.price;
+      const sum = state.cart.reduce(reducer, 0);
+      return sum;
+    }
+
+    //Orders
+
+    const addToOrders = (payload) => {
+      setState({
+          ...state,
+          orders: {
+              ...state.orders,
+              payload
+          }
+      });
+    };
+
+    //User
+    const addToUsers = (payload) => {
+      setState({
+          ...state,
+          user: {
+              payload
+          }
+      });
+    };
+
+
     return {
         state,
         addToCart,
         removeFromCart,
+        total,
+        addToOrders,
+        addToUsers
     };
 };
 

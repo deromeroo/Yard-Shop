@@ -10,6 +10,10 @@
 	position: absolute;
 	top: 60px;
 	right: 25px;
+
+	p, a{
+		cursor: pointer;
+	}
 }
 .Menu ul {
 	list-style: none;
